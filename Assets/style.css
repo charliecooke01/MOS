@@ -16,6 +16,10 @@
   text-decoration: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   margin: 0;
@@ -85,6 +89,11 @@ p {
   height: 67px;
 }
 
+.footer-logo:hover,
+.header-logo:hover {
+  transform: scale(1.02);
+  transition: transform 0.1s ease;
+}
 .navbar {
   display: flex;
   flex-direction: row;
@@ -110,6 +119,64 @@ p {
   font-weight: 600;
 }
 
+.navbar-menu li:hover {
+  transform: scale(1.01);
+  transition: transform 0.1s ease;
+  color: #b2eee5;
+}
+
+.navbar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.navbar-toggle-icon,
+.navbar-toggle-icon::before,
+.navbar-toggle-icon::after {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.navbar-toggle-icon {
+  position: relative;
+}
+
+.navbar-toggle-icon::before,
+.navbar-toggle-icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.navbar-toggle-icon::before {
+  top: -7px;
+}
+
+.navbar-toggle-icon::after {
+  top: 7px;
+}
+
+.navbar.open .navbar-toggle-icon {
+  background-color: transparent;
+}
+
+.navbar.open .navbar-toggle-icon::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.navbar.open .navbar-toggle-icon::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
 .button {
   background-color: #00c7a9;
   color: #ffffff;
@@ -119,9 +186,16 @@ p {
   cursor: pointer;
   text-decoration: none;
   font-size: 18px;
-  font-weight: 550;
+  font-weight: 500;
   width: fit-content;
   margin-top: 10px;
+}
+
+.button:hover {
+  background-color: #8dd4c9;
+  transition: background-color 0.3s ease;
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
 }
 
 .banner {
@@ -190,6 +264,7 @@ p {
   margin: 0;
   padding: 0;
   width: 100%;
+  margin: 50px 0;
 }
 
 .section-with-icons-list li {
@@ -200,10 +275,26 @@ p {
   text-align: center;
 }
 
-.section-with-icons-list img {
+.section-with-icons-list .icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  background-color: #00c7a9;
+  border-radius: 50%;
+}
+
+.section-with-icons-list .icon-container:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.section-with-icons-list .icon-image {
   width: 80px;
   height: 80px;
   object-fit: contain;
+  padding: 10px;
 }
 
 .section-with-icons-list span {
@@ -211,6 +302,12 @@ p {
   font-weight: 400;
   color: #666666;
   line-height: 1.4;
+}
+
+#about,
+#what,
+#faqs {
+  scroll-margin-top: calc(var(--header-height));
 }
 
 .faqs {
@@ -228,7 +325,9 @@ p {
   padding: 0;
   gap: 15px;
 }
-.faqs-list li {
+
+.faqs-list .container {
+  position: relative;
   text-decoration: none;
   text-align: left;
   font-weight: 400;
@@ -236,6 +335,41 @@ p {
   color: #666666;
   padding: 20px 30px;
   border-radius: 18px;
+}
+
+.faqs-list .label {
+  position: relative;
+  padding: 10px 30px 10px 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: #666666;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.faqs-list .label::before {
+  content: "+";
+  color: #666666;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  font-size: 18px;
+  transform: translateY(-50%);
+}
+
+.faqs-list .content {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.faqs-list .container.active .content {
+  margin-top: 20px;
+}
+
+.faqs-list .container.active .label::before {
+  content: "-";
 }
 
 footer {
@@ -270,10 +404,17 @@ footer {
   padding: 0;
   gap: 10px;
 }
+
 .footer-menu li {
   text-decoration: none;
   text-align: left;
   font-weight: 500;
+}
+
+.footer-menu li:hover {
+  transform: scale(1.01);
+  transition: transform 0.1s ease;
+  color: #cdf1ec;
 }
 
 .footer-text {
@@ -306,14 +447,38 @@ footer {
   }
 
   header {
-    height: 80px;
+    height: auto;
+    min-height: 80px;
+    padding-bottom: 0;
   }
   .header-logo {
     height: 60px;
   }
 
+  .navbar {
+    flex-wrap: wrap;
+    row-gap: 0;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+
   .navbar-menu {
     display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 20px;
+    padding: 20px 0;
+  }
+
+  .navbar.open .navbar-menu {
+    display: flex;
+  }
+
+  .navbar-menu li {
+    text-align: left;
   }
 
   .banner {
@@ -347,34 +512,41 @@ footer {
   :root {
     --box-padding-x: 40px;
   }
+
   header {
     padding: 0 var(--box-padding-x);
-    height: 60px;
+    min-height: 60px;
   }
+
   .header-logo {
     height: 40px;
   }
+
   .banner {
     align-items: flex-start;
     background-image: url("../Assets/Images/mother-01-mobile.png");
     background-position: bottom;
   }
+
   .banner-content {
     width: 100%;
     margin-top: 100px;
   }
+
   footer {
     flex-direction: column;
     align-items: left;
     justify-content: center;
     gap: 60px;
   }
+
   .footer-content {
     flex-direction: column;
     align-items: left;
     justify-content: flex-start;
     gap: 60px;
   }
+
   .footer-logo {
     width: 60%;
     height: auto;

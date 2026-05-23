@@ -10,64 +10,111 @@
     <!--Header-->
     <header class="header">
       <nav class="navbar">
-        <img
-          class="header-logo"
-          src="Assets/Images/mos-logo-white.png"
-          alt="MOS Logo"
-        />
-        <ul class="navbar-menu">
-          <li><a href="about.html">About the<br />Registry</a></li>
-          <li><a href="what.html">What to<br />Expect</a></li>
-          <li><a href="why.html">Prescribing<br />Information</a></li>
-          <li><a href="frequently.html">FAQs</a></li>
-          <li><a href="for.html">For Healthcare<br />Providers</a></li>
-          <li><a href="prescribing.html">See if you<br />Prequalify</a></li>
+        <a href="#banner">
+          <img
+            class="header-logo"
+            src="Assets/Images/mos-logo-white.png"
+            alt="MOS Logo"
+          />
+        </a>
+        <button
+          class="navbar-toggle"
+          type="button"
+          aria-controls="navbar-menu"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggle-icon"></span>
+        </button>
+        <ul class="navbar-menu" id="navbar-menu">
+          <li>
+            <a href="#about">About the<br />Registry</a>
+          </li>
+          <li>
+            <a href="#what">What to<br />Expect</a>
+          </li>
+          <li><a href="#faqs">FAQs</a></li>
+          <li>
+            <a
+              href="https://en-us.elfabriopregnancyregistry.com/HCP"
+              target="_blank"
+              >For Healthcare<br />Providers</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://s3.amazonaws.com/pra.cts.prod/practs_study_files/0001/02/6d2a643177f2659bb67646607c1636438cb103e5.pdf"
+              target="_blank"
+              >Prescribing<br />Information</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://en-us.elfabriopregnancyregistry.com/survey?clinic=952#questionnaire"
+              target="_blank"
+              >See if you<br />Prequalify</a
+            >
+          </li>
         </ul>
       </nav>
     </header>
     <!--Main-->
     <main class="main">
-      <section class="banner">
+      <section class="banner" id="banner">
         <div class="banner-content">
           <div class="banner-content-text">
-          <h1>Join a worldwide outreach campaign</h1>
-          <h3>
-            The Maternal and Postnatal Outcomes Study (MOS) is a pregnancy
-            registry to help healthcare providers and their patients learn about
-            the safety of Elfabrio® for Fabry disease.
-          </h3>
-          <button class="button" value="Learn more">Learn more</button>
-          <p class="banner-text">
-            There are no study visits.<br />All interactions are by phone or
-            online.
-          </p>
+            <h1>Join a worldwide outreach campaign</h1>
+            <h3>
+              The Maternal and Postnatal Outcomes Study (MOS) is a pregnancy
+              registry to help healthcare providers and their patients learn
+              about the safety of Elfabrio® for Fabry disease.
+            </h3>
+            <button
+              class="button"
+              onclick="window.location.href = '#about'"
+              value="Learn more"
+            >
+              Learn more
+            </button>
+            <p class="banner-text">
+              There are no study visits.<br />All interactions are by phone or
+              online.
+            </p>
           </div>
         </div>
       </section>
-      <section class="section-with-image">
+      <section class="section-with-image" id="about">
         <div class="section-content">
           <h2>About the Pregnancy Registry and Who Can Participate</h2>
           <p>
             The purpose of the MOS pregnancy registry is to create a worldwide
-            information source, called a pregnancy registry. Once established, the
-            MOS registry will help doctors and other healthcare providers learn
-            more about the effects of Elfabrio® (pegunigalsidase alfa-iwxj) on
-            individuals with Fabry disease during pregnancy or while
-            breastfeeding.
+            information source, called a pregnancy registry. Once established,
+            the MOS registry will help doctors and other healthcare providers
+            learn more about the effects of Elfabrio® (pegunigalsidase
+            alfa-iwxj) on individuals with Fabry disease during pregnancy or
+            while breastfeeding.
             <br />
             <br />
             Being pregnant, having been pregnant, or breastfeeding while taking
-            Elfabrio® (pegunigalsidase alfa-iwxj) for Fabry disease are the basic
-            requirements for participating in the MOS pregnancy registry.
+            Elfabrio® (pegunigalsidase alfa-iwxj) for Fabry disease are the
+            basic requirements for participating in the MOS pregnancy registry.
           </p>
-          <button class="button" value="Find out more">Find out more</button>
+          <button
+            class="button"
+            onclick="
+              window.location.href =
+                'https://en-us.elfabriopregnancyregistry.com/survey?clinic=952#questionnaire'
+            "
+            value="Find out more"
+          >
+            Find out more
+          </button>
         </div>
         <div class="section-image">
-          <img src="Assets/Images/mother-02.png" alt="Mother and Child">
+          <img src="Assets/Images/mother-02.png" alt="Mother and Child" />
         </div>
-      </div>
       </section>
-      <section class="section-with-icons">
+      <section class="section-with-icons" id="what">
         <h2>What can participants expect?</h2>
         <p>
           There are no study visits needed to be part of the MOS pregnancy
@@ -81,35 +128,84 @@
         </p>
         <ul class="section-with-icons-list">
           <li>
-            <img src="Assets/Images/icons/icon-01.png" alt="" width="80" height="80" />
+            <div class="icon-container">
+              <img
+                src="Assets/Images/Icons/history.svg"
+                alt="history icon"
+                class="icon-image"
+              />
+            </div>
             <span>Fabry disease and treatment history</span>
           </li>
           <li>
-            <img src="Assets/Images/icons/icon-02.png" alt="" width="80" height="80" />
+            <div class="icon-container">
+              <img
+                src="Assets/Images/Icons/pregnancy.svg"
+                alt="pregnancy icon"
+                class="icon-image"
+              />
+            </div>
             <span>Pregnancy</span>
           </li>
           <li>
-            <img src="Assets/Images/icons/icon-03.png" alt="" width="80" height="80" />
+            <div class="icon-container">
+              <img
+                src="Assets/Images/Icons/problem.svg"
+                alt="problem icon"
+                class="icon-image"
+              />
+            </div>
             <span>Problems that you may have during pregnancy</span>
           </li>
           <li>
-            <img src="Assets/Images/icons/icon-04.png" alt="" width="80" height="80" />
+            <div class="icon-container">
+              <img
+                src="Assets/Images/Icons/milk.svg"
+                alt="milk icon"
+                class="icon-image"
+              />
+            </div>
             <span>Breastfeeding</span>
           </li>
           <li>
-            <img src="Assets/Images/icons/icon-05.png" alt="" width="80" height="80" />
+            <div class="icon-container">
+              <img
+                src="Assets/Images/Icons/date.svg"
+                alt="date icon"
+                class="icon-image"
+              />
+            </div>
             <span>Baby's date of birth</span>
           </li>
           <li>
-            <img src="Assets/Images/icons/icon-06.png" alt="" width="80" height="80" />
+            <div class="icon-container">
+              <img
+                src="Assets/Images/Icons/weight.svg"
+                alt="weight icon"
+                class="icon-image"
+              />
+            </div>
             <span>Baby's birth weight</span>
           </li>
           <li>
-            <img src="Assets/Images/icons/icon-07.png" alt="" width="80" height="80" />
+            <div class="icon-container">
+              <img
+                src="Assets/Images/Icons/health.svg"
+                alt="health icon"
+                class="icon-image"
+              />
+            </div>
             <span>Baby's health during the first year</span>
           </li>
         </ul>
-        <button class="button" value="Find out more">
+        <button
+          class="button"
+          onclick="
+            window.location.href =
+              'https://en-us.elfabriopregnancyregistry.com/survey?clinic=952#questionnaire'
+          "
+          value="Find out more"
+        >
           Participate in the registry
         </button>
         <p>
@@ -119,9 +215,9 @@
           Elfabrio® (pegunigalsidase alfa-iwxj), and the health of the baby.
         </p>
       </section>
-      <section class="section-with-image">
+      <section class="section-with-image" id="why">
         <div class="section-content">
-        <h2>Why are pregnancy registries important?</h2>
+          <h2>Why are pregnancy registries important?</h2>
           <p>
             There are many medications to treat medical conditions that continue
             to provide benefit to individuals while pregnant, but the effects of
@@ -140,49 +236,213 @@
             breastfeeding so that the condition can still be treated while
             pregnant/breastfeeding.
           </p>
-          <button class="button" value="Find out more">Find out more</button>
+          <button
+            class="button"
+            onclick="
+              window.location.href =
+                'https://en-us.elfabriopregnancyregistry.com/survey?clinic=952#questionnaire'
+            "
+            value="Find out more"
+          >
+            Find out more
+          </button>
         </div>
         <div class="section-image">
-          <img src="Assets/Images/mother-03.png" alt="Mother and Child">
+          <img src="Assets/Images/mother-03.png" alt="Mother and Child" />
         </div>
       </section>
-      <section class="faqs">
+      <section class="faqs" id="faqs">
         <h2>Frequently asked questions</h2>
-        <ul class="faqs-list">
-          <li>Do I need to provide consent for the MOS pregnancy registry?</li>
-          <li>
-            What will happen to my (and my child’s) personal data if I join
-            thestudy?
-          </li>
-          <li>What is the MOS pregnancy registry and why participate?</li>
-          <li>Is registry participation voluntary?</li>
-          <li>Will I be reimbursed for participating in the registry?</li>
-          <li>How do I prequalify for the registry?</li>
-          <li>How am I protected if I decide to participate?</li>
-          <li>Who is responsible for conducting this pregnancy registry?</li>
-        </ul>
+        <div class="faqs-list">
+          <div class="container">
+            <div class="label">
+              Do I need to provide consent for the MOS pregnancy registry?
+            </div>
+            <div class="content">
+              <p>
+                Taking part in this study is entirely voluntary. It is up to you
+                to decide whether to take part in the study or not. If you
+                decide to agree to take part, you will be asked to sign and date
+                the informed consent form electronically in the registry
+                web-based platform. Alternatively, you can also provide your
+                verbal consent to participate in the study. You will receive a
+                confirmation e-mail for your records.
+                <br />
+                <br />
+                You may change your mind at any time and stop participating
+                without giving any reason even if you agreed earlier.
+                <br />
+                <br />
+                If you decide against taking part, you will not receive any
+                penalties or result in any loss of benefits and your doctor will
+                continue to treat you with the most appropriate therapy for your
+                condition.
+              </p>
+            </div>
+          </div>
+          <div class="container">
+            <div class="label">
+              What will happen to my (and my child's) personal data if I join
+              thestudy?
+            </div>
+            <div class="content">
+              <p>
+                All information collected about you and your child during the
+                course of the study will be kept strictly confidential.
+                <br />
+                <br />
+                By signing the consent form and taking part in this study, you
+                agree for the clinical research organization (CRO) and Study
+                Center (if applicable) to collect and process your and your
+                child's personal information and agree for Chiesi Farmaceutici
+                S.p.A., who is the Sponsor for this study, to use your and your
+                child's personal data for the study, i.e. to learn about the
+                study drug (Elfabrio®), to help with study drug approval by
+                health authorities, and to support future research and to
+                improve science.
+                <br />
+                <br />
+                Please note that providing your and your child's personal data
+                is needed in order to verify if you can take part and to include
+                you in the study. Refusal to give consent to process your and
+                your child's personal data will mean that you cannot join the
+                study.
+              </p>
+            </div>
+          </div>
+          <div class="container">
+            <div class="label">
+              What is the MOS pregnancy registry and why participate?
+            </div>
+            <div class="content">
+              <p>
+                Elfabrio® (pegunigalsidase alfa-iwxj) is a medication approved
+                for the treatment of Fabry disease. The MOS pregnancy registry
+                will collect information about the safety of Elfabrio® during
+                pregnancy and/or while breastfeeding. Knowing this information
+                will help individuals in the future make informed decisions when
+                they become pregnant so that treatment for Fabry disease can
+                continue without harming the pregnancy or developing baby.
+              </p>
+            </div>
+          </div>
+          <div class="container">
+            <div class="label">Is registry participation voluntary?</div>
+            <div class="content">
+              <p>
+                Participation in any pregnancy registry is completely voluntary.
+                Your decision to participate—or not participate—in this registry
+                will have no effect on the medical care that you receive now or
+                in the future. If you are eligible and choose to participate in
+                the registry, you may withdraw from the registry at any time.
+              </p>
+            </div>
+          </div>
+          <div class="container">
+            <div class="label">
+              Will I be reimbursed for participating in the registry?
+            </div>
+            <div class="content">
+              <p>
+                You may receive financial compensation for your time spent as
+                part of your participation in this study. The specific amount
+                and details of this compensation will be explained to you prior
+                to your participation.
+              </p>
+            </div>
+          </div>
+          <div class="container">
+            <div class="label">How do I prequalify for the registry?</div>
+            <div class="content">
+              <p>
+                You'll first be asked some general questions
+                <a
+                  href="https://en-us.elfabriopregnancyregistry.com/survey?clinic=952#questionnaire"
+                  target="_blank"
+                >
+                  here</a
+                >
+                that help us see whether you meet the basic requirements of the
+                registry. If you do, you will be contacted to see if you fit the
+                specific qualifications for the registry.
+              </p>
+            </div>
+          </div>
+          <div class="container">
+            <div class="label">
+              How am I protected if I decide to participate?
+            </div>
+            <div class="content">
+              <p>
+                Every pregnancy registry must be reviewed, and is continually
+                monitored, by a regulatory review committee to ensure the risks
+                are as low as possible and do not outweigh any potential
+                benefits to the study participant. As a volunteer, you have the
+                right to discontinue your participation and leave the registry
+                at any time, with no penalty or loss of benefits to which you
+                are otherwise entitled.
+              </p>
+            </div>
+          </div>
+          <div class="container">
+            <div class="label">
+              Who is responsible for conducting this pregnancy registry?
+            </div>
+            <div class="content">
+              <p>
+                Chiesi, the maker of Elfabrio® (pegunigalsidase alfa-iwxj), is
+                responsible for conducting this pregnancy registry.
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
     <!--Footer-->
-    <footer>
+    <footer id="for">
       <div class="footer-content">
-        <img
-          class="footer-logo"
-          src="Assets/Images/mos-logo-white.png"
-          alt="MOS Logo"
-        />
+        <a href="#banner">
+          <img
+            class="footer-logo"
+            src="Assets/Images/mos-logo-white.png"
+            alt="MOS Logo"
+          />
+        </a>
         <ul class="footer-menu">
-          <li><a href="about.html">About the mos pregnancy registry</a></li>
-          <li><a href="what.html">What can participants expect?</a></li>
-          <li><a href="why.html">Why are pregnancy registries important?</a></li>
-          <li><a href="frequently.html">Frequently asked questions</a></li>
-          <li><a href="for.html">For healthcare professionals</a></li>
-          <li><a href="prescribing.html">Prescribing information</a></li>
+          <li>
+            <a href="#about">About the Registry</a>
+          </li>
+          <li>
+            <a href="#what">What to Expect</a>
+          </li>
+          <li><a href="#faqs">FAQs</a></li>
+          <li>
+            <a
+              href="https://en-us.elfabriopregnancyregistry.com/HCP"
+              target="_blank"
+              >For Healthcare Providers</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://s3.amazonaws.com/pra.cts.prod/practs_study_files/0001/02/6d2a643177f2659bb67646607c1636438cb103e5.pdf"
+              target="_blank"
+              >Prescribing Information</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://en-us.elfabriopregnancyregistry.com/survey?clinic=952#questionnaire"
+              target="_blank"
+              >See if you Prequalify</a
+            >
+          </li>
         </ul>
       </div>
-        <p class="footer-text">
-          Privacy policy  |   Terms of service  |  Cookie preferences
-        </p>
+      <p class="footer-text">
+        Privacy policy | Terms of service | Cookie preferences
+      </p>
     </footer>
+    <script src="Assets/script.js"></script>
   </body>
 </html>
