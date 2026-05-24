@@ -112,19 +112,39 @@ gsap.utils.toArray(".text-animate-up").forEach((element) => {
 });
 
 //image animations
-gsap.utils.toArray(".image-animate-left").forEach((element) => {
-  gsap.from(element, {
-    autoAlpha: 0,
-    x: 100,
-    duration: 1,
-    ease: "power2.out",
-    scrollTrigger: {
-      trigger: element,
-      start: "top 85%",
-      toggleActions: "play none none none",
-      once: true,
-    },
-  });
+ScrollTrigger.matchMedia({
+  "(min-width: 1201px)": () => {
+    gsap.utils.toArray(".image-animate-left").forEach((element) => {
+      gsap.from(element, {
+        autoAlpha: 0,
+        x: 100,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: element,
+          start: "top 85%",
+          toggleActions: "play none none none",
+          once: true,
+        },
+      });
+    });
+  },
+  "(max-width: 1200px)": () => {
+    gsap.utils.toArray(".image-animate-left").forEach((element) => {
+      gsap.from(element, {
+        autoAlpha: 0,
+        y: 24,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: element,
+          start: "top 85%",
+          toggleActions: "play none none none",
+          once: true,
+        },
+      });
+    });
+  },
 });
 
 //icons animations
