@@ -212,7 +212,7 @@ p {
   align-items: center;
   background-color: #2c3731;
   color: #ffffff;
-  background-image: url("../Assets/Images/mother-01-desktop.png");
+  background-image: url("Images/mother-01-desktop.png");
   background-position: bottom 0 right 30%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -577,7 +577,7 @@ footer {
 
   .banner {
     align-items: flex-start;
-    background-image: url("../Assets/Images/mother-01-mobile.png");
+    background-image: url("Images/mother-01-mobile.png");
     background-position: bottom;
   }
 
