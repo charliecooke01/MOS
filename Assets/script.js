@@ -57,25 +57,49 @@ for (let i = 0; i < accordion.length; i++) {
 }
 
 // Scroll animations with GSAP
+const scrollMm = gsap.matchMedia();
+const scrollTriggerDefaults = {
+  start: "top 85%",
+  toggleActions: "play none none none",
+  once: true,
+};
+
+function scrollFrom(target, desktopVars, mobileVars, trigger) {
+  const triggerEl = trigger || target;
+  const scrollTrigger = { ...scrollTriggerDefaults, trigger: triggerEl };
+
+  scrollMm.add("(min-width: 769px)", () => {
+    gsap.from(target, { scrollTrigger, ...desktopVars });
+  });
+
+  scrollMm.add("(max-width: 768px)", () => {
+    gsap.from(target, { scrollTrigger, ...mobileVars });
+  });
+}
 
 //banner items
 document.querySelectorAll(".banner-content-text").forEach((group) => {
   const bannerItems = group.querySelectorAll(".banner-item-animate");
   if (!bannerItems.length) return;
 
-  gsap.from(bannerItems, {
-    autoAlpha: 0,
-    x: 24,
-    duration: 1,
-    ease: "power2.out",
-    stagger: 0.12,
-    scrollTrigger: {
-      trigger: group,
-      start: "top 85%",
-      toggleActions: "play none none none",
-      once: true,
+  scrollFrom(
+    bannerItems,
+    {
+      autoAlpha: 0,
+      x: 24,
+      duration: 1,
+      ease: "power2.out",
+      stagger: 0.12,
     },
-  });
+    {
+      autoAlpha: 0,
+      y: 24,
+      duration: 1,
+      ease: "power2.out",
+      stagger: 0.12,
+    },
+    group,
+  );
 });
 
 gsap.utils.toArray(".banner-item-animate").forEach((element) => {
@@ -113,18 +137,21 @@ gsap.utils.toArray(".text-animate-up").forEach((element) => {
 
 //image animations
 gsap.utils.toArray(".image-animate-left").forEach((element) => {
-  gsap.from(element, {
-    autoAlpha: 0,
-    x: 100,
-    duration: 1,
-    ease: "power2.out",
-    scrollTrigger: {
-      trigger: element,
-      start: "top 85%",
-      toggleActions: "play none none none",
-      once: true,
+  scrollFrom(
+    element,
+    {
+      autoAlpha: 0,
+      x: 100,
+      duration: 1,
+      ease: "power2.out",
     },
-  });
+    {
+      autoAlpha: 0,
+      y: 24,
+      duration: 1,
+      ease: "power2.out",
+    },
+  );
 });
 
 //icons animations
@@ -166,34 +193,40 @@ gsap.utils.toArray(".icon-animate").forEach((element) => {
 
 //button animations
 gsap.utils.toArray(".button-animate").forEach((element) => {
-  gsap.from(element, {
-    autoAlpha: 0,
-    x: -24,
-    duration: 1,
-    ease: "power2.inOut",
-    scrollTrigger: {
-      trigger: element,
-      start: "top 85%",
-      toggleActions: "play none none none",
-      once: true,
+  scrollFrom(
+    element,
+    {
+      autoAlpha: 0,
+      x: -24,
+      duration: 1,
+      ease: "power2.inOut",
     },
-  });
+    {
+      autoAlpha: 0,
+      y: 24,
+      duration: 1,
+      ease: "power2.inOut",
+    },
+  );
 });
 
 //faq animations
 gsap.utils.toArray(".faq-animate").forEach((element) => {
-  gsap.from(element, {
-    autoAlpha: 0,
-    x: 24,
-    duration: 0.5,
-    ease: "power2.inOut",
-    scrollTrigger: {
-      trigger: element,
-      start: "top 85%",
-      toggleActions: "play none none none",
-      once: true,
+  scrollFrom(
+    element,
+    {
+      autoAlpha: 0,
+      x: 24,
+      duration: 0.5,
+      ease: "power2.inOut",
     },
-  });
+    {
+      autoAlpha: 0,
+      y: 24,
+      duration: 0.5,
+      ease: "power2.inOut",
+    },
+  );
 });
 
 window.addEventListener("load", () => ScrollTrigger.refresh());
