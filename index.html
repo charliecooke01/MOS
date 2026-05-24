@@ -7,10 +7,9 @@
     <link rel="stylesheet" href="Assets/style.css" />
   </head>
   <body>
-    <!--Header-->
     <header class="header">
       <nav class="navbar">
-        <a href="#banner">
+        <a href="#top">
           <img
             class="header-logo"
             src="Assets/Images/mos-logo-white.png"
@@ -28,55 +27,56 @@
         </button>
         <ul class="navbar-menu" id="navbar-menu">
           <li>
-            <a href="#about">About the<br />Registry</a>
+            <a href="#about">About the Registry</a>
           </li>
           <li>
-            <a href="#what">What to<br />Expect</a>
+            <a href="#what">What to Expect</a>
           </li>
           <li><a href="#faqs">FAQs</a></li>
           <li>
             <a
               href="https://en-us.elfabriopregnancyregistry.com/HCP"
               target="_blank"
-              >For Healthcare<br />Providers</a
+              >For Healthcare Providers</a
             >
           </li>
           <li>
             <a
               href="https://s3.amazonaws.com/pra.cts.prod/practs_study_files/0001/02/6d2a643177f2659bb67646607c1636438cb103e5.pdf"
               target="_blank"
-              >Prescribing<br />Information</a
+              >Prescribing Information</a
             >
           </li>
           <li>
             <a
               href="https://en-us.elfabriopregnancyregistry.com/survey?clinic=952#questionnaire"
               target="_blank"
-              >See if you<br />Prequalify</a
+              >See if you Prequalify</a
             >
           </li>
         </ul>
       </nav>
     </header>
-    <!--Main-->
     <main class="main">
       <section class="banner" id="banner">
         <div class="banner-content">
           <div class="banner-content-text">
-            <h1>Join a worldwide outreach campaign</h1>
-            <h3>
+            <h1 class="banner-item-animate">
+              Join a worldwide outreach campaign
+            </h1>
+            <h3 class="banner-item-animate">
               The Maternal and Postnatal Outcomes Study (MOS) is a pregnancy
               registry to help healthcare providers and their patients learn
               about the safety of Elfabrio® for Fabry disease.
             </h3>
             <button
-              class="button"
+              class="button banner-item-animate"
               onclick="window.location.href = '#about'"
               value="Learn more"
             >
               Learn more
             </button>
-            <p class="banner-text">
+            <p class="banner-text banner-item-animate">
               There are no study visits.<br />All interactions are by phone or
               online.
             </p>
@@ -85,8 +85,10 @@
       </section>
       <section class="section-with-image" id="about">
         <div class="section-content">
-          <h2>About the Pregnancy Registry and Who Can Participate</h2>
-          <p>
+          <h2 class="text-animate-up">
+            About the Pregnancy Registry and Who Can Participate
+          </h2>
+          <p class="text-animate-up">
             The purpose of the MOS pregnancy registry is to create a worldwide
             information source, called a pregnancy registry. Once established,
             the MOS registry will help doctors and other healthcare providers
@@ -100,7 +102,7 @@
             basic requirements for participating in the MOS pregnancy registry.
           </p>
           <button
-            class="button"
+            class="button button-animate"
             onclick="
               window.location.href =
                 'https://en-us.elfabriopregnancyregistry.com/survey?clinic=952#questionnaire'
@@ -111,12 +113,16 @@
           </button>
         </div>
         <div class="section-image">
-          <img src="Assets/Images/mother-02.png" alt="Mother and Child" />
+          <img
+            class="image-animate-left"
+            src="Assets/Images/mother-02.png"
+            alt="Mother and Child"
+          />
         </div>
       </section>
       <section class="section-with-icons" id="what">
-        <h2>What can participants expect?</h2>
-        <p>
+        <h2 class="text-animate-up">What can participants expect?</h2>
+        <p class="text-animate-up">
           There are no study visits needed to be part of the MOS pregnancy
           registry. If you qualify, you will be asked to sign an informed
           consent form (like any other clinical study). Then, you will be given
@@ -128,7 +134,7 @@
         </p>
         <ul class="section-with-icons-list">
           <li>
-            <div class="icon-container">
+            <div class="icon-container icon-animate">
               <img
                 src="Assets/Images/Icons/history.svg"
                 alt="history icon"
@@ -138,7 +144,7 @@
             <span>Fabry disease and treatment history</span>
           </li>
           <li>
-            <div class="icon-container">
+            <div class="icon-container icon-animate">
               <img
                 src="Assets/Images/Icons/pregnancy.svg"
                 alt="pregnancy icon"
@@ -148,7 +154,7 @@
             <span>Pregnancy</span>
           </li>
           <li>
-            <div class="icon-container">
+            <div class="icon-container icon-animate">
               <img
                 src="Assets/Images/Icons/problem.svg"
                 alt="problem icon"
@@ -158,7 +164,7 @@
             <span>Problems that you may have during pregnancy</span>
           </li>
           <li>
-            <div class="icon-container">
+            <div class="icon-container icon-animate">
               <img
                 src="Assets/Images/Icons/milk.svg"
                 alt="milk icon"
@@ -168,7 +174,7 @@
             <span>Breastfeeding</span>
           </li>
           <li>
-            <div class="icon-container">
+            <div class="icon-container icon-animate">
               <img
                 src="Assets/Images/Icons/date.svg"
                 alt="date icon"
@@ -178,7 +184,7 @@
             <span>Baby's date of birth</span>
           </li>
           <li>
-            <div class="icon-container">
+            <div class="icon-container icon-animate">
               <img
                 src="Assets/Images/Icons/weight.svg"
                 alt="weight icon"
@@ -188,7 +194,7 @@
             <span>Baby's birth weight</span>
           </li>
           <li>
-            <div class="icon-container">
+            <div class="icon-container icon-animate">
               <img
                 src="Assets/Images/Icons/health.svg"
                 alt="health icon"
@@ -199,7 +205,7 @@
           </li>
         </ul>
         <button
-          class="button"
+          class="button button-animate"
           onclick="
             window.location.href =
               'https://en-us.elfabriopregnancyregistry.com/survey?clinic=952#questionnaire'
@@ -208,7 +214,7 @@
         >
           Participate in the registry
         </button>
-        <p>
+        <p class="text-animate-up">
           If you prequalify, (by answering the prescreener questions at the link
           above), you will be contacted by a member of the study team to answer
           a few more questions about your pregnancy, your Fabry disease,
@@ -217,8 +223,10 @@
       </section>
       <section class="section-with-image" id="why">
         <div class="section-content">
-          <h2>Why are pregnancy registries important?</h2>
-          <p>
+          <h2 class="text-animate-up">
+            Why are pregnancy registries important?
+          </h2>
+          <p class="text-animate-up">
             There are many medications to treat medical conditions that continue
             to provide benefit to individuals while pregnant, but the effects of
             those medications on the pregnancy and developing baby are not fully
@@ -237,7 +245,7 @@
             pregnant/breastfeeding.
           </p>
           <button
-            class="button"
+            class="button button-animate"
             onclick="
               window.location.href =
                 'https://en-us.elfabriopregnancyregistry.com/survey?clinic=952#questionnaire'
@@ -248,13 +256,17 @@
           </button>
         </div>
         <div class="section-image">
-          <img src="Assets/Images/mother-03.png" alt="Mother and Child" />
+          <img
+            class="image-animate-left"
+            src="Assets/Images/mother-03.png"
+            alt="Mother and Child"
+          />
         </div>
       </section>
       <section class="faqs" id="faqs">
-        <h2>Frequently asked questions</h2>
+        <h2 class="faq-animate">Frequently asked questions</h2>
         <div class="faqs-list">
-          <div class="container">
+          <div class="container faq-animate">
             <div class="label">
               Do I need to provide consent for the MOS pregnancy registry?
             </div>
@@ -280,7 +292,7 @@
               </p>
             </div>
           </div>
-          <div class="container">
+          <div class="container faq-animate">
             <div class="label">
               What will happen to my (and my child's) personal data if I join
               thestudy?
@@ -310,7 +322,7 @@
               </p>
             </div>
           </div>
-          <div class="container">
+          <div class="container faq-animate">
             <div class="label">
               What is the MOS pregnancy registry and why participate?
             </div>
@@ -326,7 +338,7 @@
               </p>
             </div>
           </div>
-          <div class="container">
+          <div class="container faq-animate">
             <div class="label">Is registry participation voluntary?</div>
             <div class="content">
               <p>
@@ -338,7 +350,7 @@
               </p>
             </div>
           </div>
-          <div class="container">
+          <div class="container faq-animate">
             <div class="label">
               Will I be reimbursed for participating in the registry?
             </div>
@@ -351,7 +363,7 @@
               </p>
             </div>
           </div>
-          <div class="container">
+          <div class="container faq-animate">
             <div class="label">How do I prequalify for the registry?</div>
             <div class="content">
               <p>
@@ -368,7 +380,7 @@
               </p>
             </div>
           </div>
-          <div class="container">
+          <div class="container faq-animate">
             <div class="label">
               How am I protected if I decide to participate?
             </div>
@@ -384,7 +396,7 @@
               </p>
             </div>
           </div>
-          <div class="container">
+          <div class="container faq-animate">
             <div class="label">
               Who is responsible for conducting this pregnancy registry?
             </div>
@@ -398,10 +410,9 @@
         </div>
       </section>
     </main>
-    <!--Footer-->
     <footer id="for">
       <div class="footer-content">
-        <a href="#banner">
+        <a href="#top">
           <img
             class="footer-logo"
             src="Assets/Images/mos-logo-white.png"
@@ -443,6 +454,9 @@
         Privacy policy | Terms of service | Cookie preferences
       </p>
     </footer>
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
     <script src="Assets/script.js"></script>
   </body>
 </html>

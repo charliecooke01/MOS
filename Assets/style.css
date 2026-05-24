@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
-/* CSS Variables */
 :root {
   --bg-color: #ffffff;
   --text-color: rgb(37, 37, 37);
@@ -9,7 +8,6 @@
   --header-height: 100px;
 }
 
-/* General styling */
 * {
   box-sizing: border-box;
   color: inherit;
@@ -28,7 +26,6 @@ body {
   background-color: #ffffff;
 }
 
-/* Header Styling */
 header {
   background-color: rgba(67, 188, 170, 0.85);
   color: #ffffff;
@@ -69,6 +66,7 @@ h2 {
 h3 {
   font-size: 20px;
   font-weight: 500;
+  line-height: 1.2;
 }
 
 p {
@@ -100,6 +98,7 @@ p {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  gap: 70px;
 }
 
 .navbar-menu {
@@ -127,25 +126,28 @@ p {
 
 .navbar-toggle {
   display: none;
+  position: relative;
   background: none;
   border: none;
   cursor: pointer;
   padding: 8px;
-}
-
-.navbar-toggle-icon,
-.navbar-toggle-icon::before,
-.navbar-toggle-icon::after {
-  display: block;
-  width: 24px;
-  height: 2px;
-  background-color: #ffffff;
-  border-radius: 2px;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  width: 40px;
+  height: 40px;
 }
 
 .navbar-toggle-icon {
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 2px;
+  margin-top: -1px;
+  margin-left: -12px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
 }
 
 .navbar-toggle-icon::before,
@@ -153,14 +155,21 @@ p {
   content: "";
   position: absolute;
   left: 0;
+  width: 24px;
+  height: 2px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
 }
 
 .navbar-toggle-icon::before {
-  top: -7px;
+  top: -8px;
 }
 
 .navbar-toggle-icon::after {
-  top: 7px;
+  top: 8px;
 }
 
 .navbar.open .navbar-toggle-icon {
@@ -204,7 +213,7 @@ p {
   background-color: #2c3731;
   color: #ffffff;
   background-image: url("../Assets/Images/mother-01-desktop.png");
-  background-position: bottom 100% right 30%;
+  background-position: bottom 0 right 30%;
   background-repeat: no-repeat;
   background-size: cover;
   padding: 0 var(--box-padding-x);
@@ -445,9 +454,12 @@ footer {
   p {
     font-size: 16px;
   }
+  .banner-text {
+    font-size: 16px;
+  }
 
   header {
-    height: auto;
+    height: 80px;
     min-height: 80px;
     padding-bottom: 0;
   }
@@ -456,21 +468,36 @@ footer {
   }
 
   .navbar {
-    flex-wrap: wrap;
-    row-gap: 0;
+    position: relative;
+    flex-wrap: nowrap;
+  }
+
+  .navbar > a,
+  .navbar-toggle {
+    display: flex;
+    align-items: center;
+    height: 80px;
   }
 
   .navbar-toggle {
-    display: block;
+    justify-content: center;
   }
 
   .navbar-menu {
     display: none;
+    position: absolute;
+    top: 100%;
+    left: calc(-1 * var(--box-padding-x));
+    right: calc(-1 * var(--box-padding-x));
     flex-direction: column;
     align-items: flex-start;
-    width: 100%;
     gap: 20px;
-    padding: 20px 0;
+    margin: 0;
+    padding: 20px var(--box-padding-x) 24px;
+    background-color: rgba(67, 188, 170, 0.85);
+    z-index: 20;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
   }
 
   .navbar.open .navbar-menu {
@@ -513,9 +540,35 @@ footer {
     --box-padding-x: 40px;
   }
 
+  h1 {
+    font-size: 28px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  h3 {
+    font-size: 16px;
+  }
+  p {
+    font-size: 14px;
+  }
+  .banner-text {
+    font-size: 14px;
+  }
+
   header {
-    padding: 0 var(--box-padding-x);
+    height: 60px;
     min-height: 60px;
+    padding: 0 var(--box-padding-x);
+  }
+
+  .navbar > a,
+  .navbar-toggle {
+    height: 60px;
+  }
+
+  .navbar-menu {
+    max-height: calc(100vh - 60px);
   }
 
   .header-logo {
